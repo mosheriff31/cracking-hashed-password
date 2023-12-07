@@ -4,10 +4,16 @@ This script attempts to crack hashed passwords using a brute-force approach. It 
 - [Usage](#usage)
 - [Requirements](#requirements)
 - [Disclaimer](#disclaimer)
-- [Contributing](#contributing)
-- [License](#license)
 
+## requirments
+    -  [Python 3]
+    -  [hashlib library (included in standard Python library)]
 ## Usage
+   - [navigate the project using]
+   - [cd cracking-hashed-password]
+
+## Disclaimer
+   This script is intended for educational purposes only. Use it responsibly and within the bounds of the law. The author is not responsible for any misuse or illegal activities.
 
 1. Clone the repository:
    ```bash
