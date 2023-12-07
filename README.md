@@ -9,8 +9,8 @@ This script attempts to crack hashed passwords using a brute-force approach. It 
     -  [Python 3]
     -  [hashlib library (included in standard Python library)]
 ## Usage
-    - [navigate the project using]
-    - [cd cracking-hashed-password]
+    - navigate the project using
+    -        cd cracking-hashed-password
      1. Clone the repository:
     ```bash
        git clone https://github.com/your-username/cracking-hashed-password.git
