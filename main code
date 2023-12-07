@@ -1,0 +1,30 @@
+from hashlib import sha256
+import csv
+from collections import OrderedDict
+
+PASSWORD_LENGTH = 4
+
+def hash_password_hack(input_file_name, output_file_name):
+    password_library = generate_password_library()
+
+    with open(input_file_name, "r") as csvfile:
+        with open(output_file_name, "w", newline="") as outfile:
+            csv_reader = csv.DictReader(csvfile)
+            fieldnames = csv_reader.fieldnames + ["password"]
+            csv_writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            csv_writer.writeheader()
+
+            for row in csv_reader:
+                name = row["name"]
+                names_hash = row["hash"]
+                password = password_library.get(names_hash, "Not Found")
+                row["password"] = password
+                csv_writer.writerow(row)
+
+def generate_password_library():
+    password_library = OrderedDict()
+    for i in range(10**PASSWORD_LENGTH):
+        password = str(i).zfill(PASSWORD_LENGTH)
+        hashed = sha256(password.encode('utf-8')).hexdigest()
+        password_library[hashed] = password
+    return password_library
